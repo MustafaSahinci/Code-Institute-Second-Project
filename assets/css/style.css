@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    /* background-color: #a78c5e; */
+}
+
+img {
+    width: 100px;
+}
+
+.back {
+    height: 150px;
+}
+
+.flip-game {
+    background-color: blue';
+}
