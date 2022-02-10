@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="spongebob, a spongebob memory game">
+    <meta name="keywords" content="spongebob, Memory game, flip game, card, cards,">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Card Flip Game</title>
 </head>
@@ -12,70 +15,144 @@
 <body>
     <header class="header">
         <div>
-            <h1>Spongebob Memory Game</h1>
+            <a onclick=goBack() href="">
+                <h1>Spongebob Memory Game</h1>
+            </a>
             <h2>Find spongebob and his friends </h2>
         </div>
     </header>
-    <!-- flip game -->
-    <section class="flip-game">
-        <div class="flip-cards">
-            <img class="front" src="assets/images/song.png" alt="temporary-picture">
-            <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+    <section>
+        <!-- Game Menu -->
+        <div>
+            <div id="modeButtons">
+                <button onclick=gameModeEasy() class="button">Easy</button>
+                <button onclick=gameModeMedium() class="button">Medium</button>
+                <button class="button">hard</button>
+            </div>
         </div>
-        <div class="flip-cards">
-            <img class="front" src="assets/images/song.png" alt="temporary-picture">
-            <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+        <!-- Easy mode-->
+        <div id="easy" class="flip-game">
+            <div class="flip-cards">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
         </div>
-        <div class="flip-cards">
-            <img class="front" src="assets/images/song.png" alt="temporary-picture">
-            <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+        <!-- Medium mode-->
+        <div id="medium" class="flip-game">
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
+            <div class="flip-cards-medium">
+                <img class="front" src="assets/images/song.png" alt="temporary-picture">
+                <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
+            </div>
         </div>
-        <div class="flip-cards">
-            <img class="front" src="assets/images/song.png" alt="temporary-picture">
-            <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
-        </div>
-        <div class="flip-cards">
-            <img class="front" src="assets/images/song.png" alt="temporary-picture">
-            <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
-        </div>
-        <div class="flip-cards">
-            <img class="front" src="assets/images/song.png" alt="temporary-picture">
-            <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
-        </div>
-        <div class="flip-cards">
-            <img class="front" src="assets/images/song.png" alt="temporary-picture">
-            <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
-        </div>
-        <div class="flip-cards">
-            <img class="front" src="assets/images/song.png" alt="temporary-picture">
-            <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
-        </div>
-        <div class="flip-cards">
-            <img class="front" src="assets/images/song.png" alt="temporary-picture">
-            <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
-        </div>
-        <div class="flip-cards">
-            <img class="front" src="assets/images/song.png" alt="temporary-picture">
-            <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
-        </div>
-        <div class="flip-cards">
-            <img class="front" src="assets/images/song.png" alt="temporary-picture">
-            <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
-        </div>
-        <div class="flip-cards">
-            <img class="front" src="assets/images/song.png" alt="temporary-picture">
-            <img class="back" src="assets/images/backsp.jpg" alt="temporary-picture">
-        </div>
-
     </section>
     <!-- play and reset button, numbers flip and counter-->
-    <section class="controls">
+    <section id="control" class="controls">
         <div class="btn">
             <button class="button" id="play">Play</button>
             <button class="button" id="reset">Reset</button>
         </div>
         <div class="flips">
-            <h2>Flips</h2> 
+            <h2>Flips</h2>
             <span id="counter-flips">0</span>
             <h2>timer</h2>
             <span id="timer">0</span>

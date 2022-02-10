@@ -50,7 +50,15 @@ img {
     transform: scale(1);
 }
 
-.flip-cards:active {
+.flip-cards-medium {
+    height: calc(33% - 10px);
+    width: calc(20% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+}
+
+.flip-cards:active, .flip-cards-medium:active {
     transform: scale(95%);
     transition: transform.2s ;
 
@@ -79,6 +87,7 @@ img {
     border: 1px solid black;
     border-radius: 10px;
     transform: scale(1);
+    letter-spacing: 1px;
 }
 
 button:active {
@@ -112,4 +121,13 @@ button:hover{
 
 span{
     font-size: 150%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: blue;
 }
