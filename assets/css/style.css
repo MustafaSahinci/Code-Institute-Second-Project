@@ -64,9 +64,9 @@ img {
 }
 
 .controls {
-    height: 70px;
-    width: 210px;
-    margin: 20px auto
+    height: 75px;
+    width: 500px;
+    margin: 20px auto;
 }
 
 .button {
@@ -88,4 +88,27 @@ button:active {
 button:hover{
     background-color: aqua;
 
+}
+
+.flips {
+    padding: 10px;
+    color: white;
+    height: 70px;
+    width: 290px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    background: black;
+    border-radius: 10px;
+}
+
+.btn {
+    height: 70px;
+    width: 200px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+span{
+    font-size: 150%;
 }
