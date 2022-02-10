@@ -23,13 +23,17 @@
     </header>
     <section>
         <!-- Game Menu -->
-        <div>
-            <div id="modeButtons">
+            <div class="menu" id="menuButtons">
+                <button id="playButton" class="button">Play!</button>
+                <div id="myModal" class="modalClass"></div>
+                <div id="modeButtons" class="modal">
+                    <span class="close">&times;</span>
                 <button onclick=gameModeEasy() class="button">Easy</button>
                 <button onclick=gameModeMedium() class="button">Medium</button>
                 <button onclick=gameModeHard() class="button">hard</button>
+                </div>
+                <button class="button">How To Play?</button>
             </div>
-        </div>
         <!-- Easy mode-->
         <div id="easy" class="flip-game">
             <div class="flip-cards">
