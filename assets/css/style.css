@@ -5,6 +5,7 @@
 
 h1, h2 {
     font-family: spfont, sans-serif;
+    letter-spacing: 1px;
 }
 
 * {
