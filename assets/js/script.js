@@ -1,6 +1,7 @@
 window.onload = function(){
     document.getElementById('easy').style.display = 'none';
     document.getElementById('medium').style.display = 'none';
+    document.getElementById('hard').style.display = 'none';
     document.getElementById('control').style.display = 'none';
 
 }
@@ -29,6 +30,17 @@ function gameModeMedium() {
     let modeButtons = document.getElementById("modeButtons")
    
     mediumMode.style.display = "";
+    controlS.style.display= "";
+    modeButtons.style.display = "none";
+}
+
+function gameModeHard() {
+    let hardMode = document.getElementById("hard");
+    let controlS = document.getElementById("control")
+
+    let modeButtons = document.getElementById("modeButtons")
+   
+    hardMode.style.display = "";
     controlS.style.display= "";
     modeButtons.style.display = "none";
 }
