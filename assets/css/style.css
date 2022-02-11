@@ -204,3 +204,38 @@ a:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* media queries */
+/* for media-queries from 600px wide and down */
+@media screen and (max-width: 600px){
+.modal {
+    width: 90%;
+}
+}
+/* for media-queries from 560px wide and down */
+@media screen and (max-width: 560px){
+.header {
+    width: 100%;
+    font-size: 80%;
+    }
+
+.flip-game {
+    width: 100%
+}
+
+.controls{
+    height: 150px;
+    width: 300px;
+}
+
+body{
+    height: 109vh;
+}
+}
+
+/* for media-queries from 440px wide and down */
+@media screen and (max-width: 440px){
+    .header{
+        font-size: 70%;
+    }
+}
