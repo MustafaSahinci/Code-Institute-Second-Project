@@ -82,7 +82,10 @@ img {
     position: absolute;
     border: 4px solid black;
     border-radius: 5px;
+}
 
+.back {
+    background: lightblue;
 }
 
 .controls {
@@ -109,7 +112,7 @@ button:active {
 }
 
 button:hover {
-    background-color: aqua;
+    background-color: lightblue;
 
 }
 
@@ -142,7 +145,7 @@ a {
 }
 
 a:hover {
-    color: blue;
+    color: lightblue;
 }
 
 .menu {
@@ -188,10 +191,6 @@ a:hover {
     color: white;
 }
 
-.modal > h3 {
-    
-}
-
 /* The Close Button */
 .close {
     color: white;
@@ -201,7 +200,7 @@ a:hover {
 
 .close:hover,
 .close:focus {
-    color: aqua;
+    color: lightblue;
     text-decoration: none;
     cursor: pointer;
 }
