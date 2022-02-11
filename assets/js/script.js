@@ -7,7 +7,7 @@ window.onload = function(){
 }
 
 function goBack(){
-    let back = document.getElementById(modeButtons)
+    let back = document.getElementById(menuButtons)
 
     back.style.display = "";
 }
@@ -16,12 +16,10 @@ function gameModeEasy() {
     let easyMode = document.getElementById("easy");
     let controlS = document.getElementById("control")
 
-    let modeButtons = document.getElementById("modeButtons")
     let menuButtons = document.getElementById("menuButtons")
    
     easyMode.style.display = "";
     controlS.style.display= "";
-    modeButtons.style.display = "none";
     menuButtons.style.display = "none";
 }
 
@@ -29,12 +27,10 @@ function gameModeMedium() {
     let mediumMode = document.getElementById("medium");
     let controlS = document.getElementById("control")
 
-    let modeButtons = document.getElementById("modeButtons")
     let menuButtons = document.getElementById("menuButtons")
    
     mediumMode.style.display = "";
     controlS.style.display= "";
-    modeButtons.style.display = "none";
     menuButtons.style.display = "none";
 }
 
@@ -42,37 +38,42 @@ function gameModeHard() {
     let hardMode = document.getElementById("hard");
     let controlS = document.getElementById("control")
 
-    let modeButtons = document.getElementById("modeButtons")
     let menuButtons = document.getElementById("menuButtons")
    
     hardMode.style.display = "";
     controlS.style.display= "";
-    modeButtons.style.display = "none";
     menuButtons.style.display = "none";
 }
 
-// Get the modal
-let modal = document.getElementById("myModal");
+function initializeModal(modalID, buttonID) {
+  // Get the modal element
+  var modal = document.getElementById(modalID);
 
-// Get the button that opens the modal
-let btn = document.getElementById("playButton");
+  // Get the button that opens the modal
+  var btn = document.getElementById(buttonID);
 
-// Get the <span> element that closes the modal
-let span = document.getElementsByClassName("close")[0];
+  // Get the <span> element that closes the modal
+  var span = modal.querySelector('.close');
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+  // When the user clicks on the button, open the modal
+  btn.addEventListener('click', function() {
+    modal.style.display = "block";
+  });
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
+  // When the user clicks on <span> (x), close the modal
+  span.addEventListener('click', function() {
     modal.style.display = "none";
-  }
+  });
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.addEventListener('click', function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
 }
+
+window.addEventListener('load', function() {
+  initializeModal('myModal', 'myBtn');
+  initializeModal('myModal1', 'myBtn1');
+});

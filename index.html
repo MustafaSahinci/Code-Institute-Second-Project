@@ -23,18 +23,30 @@
     </header>
     <section>
         <!-- Game Menu -->
-            <div class="menu" id="menuButtons">
-                <button id="playButton" class="button">Play!</button>
-                <div id="myModal" class="modalClass">
-                <div id="modeButtons" class="modal">
+        <div class="menu" id="menuButtons">
+            <button id="myBtn" class="button">Play!</button>
+            <div id="myModal" class="modalClass">
+                <div class="modal">
                     <span class="close">&times;</span>
-                <button onclick=gameModeEasy() class="button">Easy</button>
-                <button onclick=gameModeMedium() class="button">Medium</button>
-                <button onclick=gameModeHard() class="button">hard</button>
+                    <button onclick=gameModeEasy() class="button">Easy</button>
+                    <button onclick=gameModeMedium() class="button">Medium</button>
+                    <button onclick=gameModeHard() class="button">hard</button>
                 </div>
             </div>
-                <button class="button">How To Play?</button>
+            <button id="myBtn1" class="button">How To Play?</button>
+            <div id="myModal1" class="modalClass">
+                <div class="modal">
+                    <span class="close">&times;</span>
+                    <h2> how to play</h2>
+                    <h3>
+                        Flip the cards ! <br> <br>
+                        Find the same charachters !  <br> <br>
+                        watch out for the time limit ! <br> <br>
+                        next time with lesser flips !
+                    </h3>
+                </div>
             </div>
+        </div>
         <!-- Easy mode-->
         <div id="easy" class="flip-game">
             <div class="flip-cards">
