@@ -3,19 +3,16 @@ window.onload = function(){
     document.getElementById('medium').style.display = 'none';
     document.getElementById('hard').style.display = 'none';
     document.getElementById('control').style.display = 'none';
-
 }
 
 function goBack(){
     let back = document.getElementById(menuButtons)
-
     back.style.display = "";
 }
 
 function gameModeEasy() {
     let easyMode = document.getElementById("easy");
     let controlS = document.getElementById("control")
-
     let menuButtons = document.getElementById("menuButtons")
    
     easyMode.style.display = "";
@@ -26,7 +23,6 @@ function gameModeEasy() {
 function gameModeMedium() {
     let mediumMode = document.getElementById("medium");
     let controlS = document.getElementById("control")
-
     let menuButtons = document.getElementById("menuButtons")
    
     mediumMode.style.display = "";
@@ -37,7 +33,6 @@ function gameModeMedium() {
 function gameModeHard() {
     let hardMode = document.getElementById("hard");
     let controlS = document.getElementById("control")
-
     let menuButtons = document.getElementById("menuButtons")
    
     hardMode.style.display = "";
@@ -77,3 +72,16 @@ window.addEventListener('load', function() {
   initializeModal('myModal', 'myBtn');
   initializeModal('myModal1', 'myBtn1');
 });
+
+// flip cards
+let cards = document.querySelectorAll(".flip-cards");
+let cards1 = document.querySelectorAll(".flip-cards-medium");
+let cards2 = document.querySelectorAll(".flip-cards-hard");
+
+function flipcard() {
+  this.classList.toggle("flip");
+}
+
+cards.forEach(card => card.addEventListener("click", flipcard));
+cards1.forEach(card => card.addEventListener("click", flipcard));
+cards2.forEach(card => card.addEventListener("click", flipcard));
