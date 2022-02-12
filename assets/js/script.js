@@ -78,9 +78,65 @@ let cards = document.querySelectorAll(".flip-cards");
 let cards1 = document.querySelectorAll(".flip-cards-medium");
 let cards2 = document.querySelectorAll(".flip-cards-hard");
 
+let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard, secondCard;
+
 function flipcard() {
-  this.classList.toggle("flip");
+  if(lockBoard) return;
+  if(this === firstCard) return;
+  this.classList.add("flip");
+
+  if(!hasFlippedCard) {
+    hasFlippedCard = true;
+    firstCard = this;
+    return
+  }
+    secondCard = this;
+    checkMatch();
 }
+
+function checkMatch() {
+  let isMatch = firstCard.dataset.image === secondCard.dataset.image;
+  isMatch? disableCard : unflipCard();
+}
+
+function disableCard() {
+  firstCard.removeEventlistener("click", flipcard)
+  secondCard.removeEventlistener("click", flipcard)
+
+  resetBoard()
+}
+
+function unflipCard() {
+  lockBoard = true;
+  setTimeout(() => {
+    firstCard.classList.remove('flip');
+    secondCard.classList.remove('flip');
+
+    resetBoard();
+  }, 1500);
+}
+
+function resetBoard() {
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
+}
+
+(function shuffle() {
+  cards,forEach(card => {
+  let pos = Math.floor(Math.random() * 8);
+  card.style.order = pos;
+  })
+  cards1,forEach(card => {
+    let pos = Math.floor(Math.random() * 12);
+    card.style.order = pos;
+    })
+  cards2,forEach(card => {
+    let pos = Math.floor(Math.random() * 16);
+    card.style.order = pos;
+    })
+})()
 
 cards.forEach(card => card.addEventListener("click", flipcard));
 cards1.forEach(card => card.addEventListener("click", flipcard));
