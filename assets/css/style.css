@@ -45,7 +45,7 @@ img {
     perspective: 1000px;
 }
 
-.flip-cards {
+.flip-card {
     height: calc(50% - 10px);
     width: calc(25% - 10px);
     margin: 5px;
@@ -55,7 +55,7 @@ img {
     transition: transform .5s;
 }
 
-.flip-cards-medium {
+.flip-card-medium {
     height: calc(33.33% - 10px);
     width: calc(25% - 10px);
     margin: 5px;
@@ -65,7 +65,7 @@ img {
     transition: transform .5s;
 }
 
-.flip-cards-hard {
+.flip-card-hard {
     height: calc(25% - 10px);
     width: calc(25% - 10px);
     margin: 5px;
@@ -75,14 +75,14 @@ img {
     transition: transform .5s;
 }
 
-.flip-cards:active,
-.flip-cards-medium:active,
-.flip-cards-hard:active {
+.flip-card:active,
+.flip-card-medium:active,
+.flip-card-hard:active {
     transform: scale(95%);
     transition: transform.2s;
 }
 
-.flip-cards.flip, .flip-cards-medium.flip, .flip-cards-hard.flip {
+.flip-card.flip, .flip-card-medium.flip, .flip-card-hard.flip {
     transform: rotateY(180deg);
 }
 
