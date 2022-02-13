@@ -132,7 +132,7 @@ button:hover {
     padding: 10px;
     color: white;
     height: 70px;
-    width: 205px;
+    width: 285px;
     display: inline-flex;
     align-items: center;
     justify-content: space-around;
@@ -142,7 +142,7 @@ button:hover {
 
 .btn {
     height: 70px;
-    width: 290px;
+    width: 210px;
     display: inline-flex;
     justify-content: space-between;
 }

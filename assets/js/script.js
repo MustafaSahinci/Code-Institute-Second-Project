@@ -5,10 +5,10 @@ window.onload = function(){
   document.getElementById('control').style.display = 'none';
 }
 
-function goBack(){
-  let back = document.getElementById(menuButtons);
-  back.style.display = "";
-}
+// function goBack(){
+//   let back = document.getElementById(menuButtons);
+//   back.style.display = "";
+// }
 
 function gameModeEasy() {
   let easyMode = document.getElementById("easy");
@@ -92,6 +92,8 @@ function flipCard() {
     // first click
     hasFlippedCard = true;
     firstCard = this;
+    startTimer()
+  
 
     return;
   }
@@ -100,7 +102,18 @@ function flipCard() {
   secondCard = this;
 
   checkForMatch();
+  // moves()
 }
+
+
+// let counter = getElementById("counter-flips")
+// counter = 0;
+
+// function moves() {
+//   counter.innerHTML++;
+//   counter++;
+// }
+
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.image === secondCard.dataset.image;
@@ -149,3 +162,30 @@ function resetBoard() {
 cards.forEach(card => card.addEventListener('click', flipCard));
 cards1.forEach(card => card.addEventListener('click', flipCard));
 cards2.forEach(card => card.addEventListener('click', flipCard));
+
+// timer and flip count
+
+var label = document.getElementById("timer");
+var timer;
+var countdown = localStorage.getItem("countdown") || 60;
+
+var button = document.getElementById("button");
+var label = document.getElementById("timer");
+var timer;
+// var countdown = localStorage.getItem("countdown") || 60;
+
+function startTimer() {
+  if (!timer) {
+    countdown = 10;
+    timer = setInterval(function() {
+      countdown--;
+      label.innerText = countdown
+      // localStorage.setItem("countdown", countdown);
+      if (countdown <= 0) {
+        clearInterval(timer);
+        alert("All done");
+      }
+    }, 1000);
+  }
+};
+
