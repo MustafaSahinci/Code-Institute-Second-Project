@@ -102,17 +102,15 @@ function flipCard() {
   secondCard = this;
 
   checkForMatch();
-  // moves()
+  moves()
 }
 
 
-// let counter = getElementById("counter-flips")
-// counter = 0;
+function moves() {
 
-// function moves() {
-//   counter.innerHTML++;
-//   counter++;
-// }
+  let counter = parseInt(document.getElementById("counter-flips").innerText);
+  document.getElementById("counter-flips").innerText = ++counter; 
+}
 
 
 function checkForMatch() {
