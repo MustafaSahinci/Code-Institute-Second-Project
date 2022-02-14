@@ -12,6 +12,7 @@ let controlS = document.getElementById("control");
 let back = document.getElementById("menuButtons");
 
 function goBack(){
+  resetGame();
   back.style.display = "";
   easyMode.style.display = "none";
   mediumMode.style.display = "none";
@@ -208,8 +209,13 @@ function resetGame() {
       shuffle();
       cardCorrect = 0;
       cards.forEach((cardReset) => cardReset.classList.remove("flip"));
+      cards1.forEach((cardReset) => cardReset.classList.remove("flip"));
+      cards2.forEach((cardReset) => cardReset.classList.remove("flip"));
       // resetBoard();
       cards.forEach((card) => card.addEventListener("click", flipCard));
+      clearTimeout(timer);
+      clearTimeout(countdown);
+      startTimer();
   }, 500);
 }
 
