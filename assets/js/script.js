@@ -79,6 +79,27 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 
+function shuffle() {
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 8);
+    card.style.order = randomPos;
+  });
+  cards1.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
+  });
+  cards2.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 16);
+    card.style.order = randomPos;
+  });
+};
+
+cards.forEach(card => card.addEventListener('click', flipCard));
+cards1.forEach(card => card.addEventListener('click', flipCard));
+cards2.forEach(card => card.addEventListener('click', flipCard));
+
+shuffle();
+
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
@@ -150,24 +171,7 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
-(function shuffle() {
-  cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 8);
-    card.style.order = randomPos;
-  });
-  cards1.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 12);
-    card.style.order = randomPos;
-  });
-  cards2.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 16);
-    card.style.order = randomPos;
-  });
-})();
 
-cards.forEach(card => card.addEventListener('click', flipCard));
-cards1.forEach(card => card.addEventListener('click', flipCard));
-cards2.forEach(card => card.addEventListener('click', flipCard));
 
 // countdown timer
 
@@ -196,5 +200,17 @@ function startTimer() {
 };
 
 // reset game
+function resetGame() {
+  setTimeout(function() {
+      // hasFlippedCard = false;
+      document.getElementById("counter-flips").innerText = 0; 
+      // [firstCard, secondCard] = [null, null];
+      shuffle();
+      cardCorrect = 0;
+      cards.forEach((cardReset) => cardReset.classList.remove("flip"));
+      // resetBoard();
+      cards.forEach((card) => card.addEventListener("click", flipCard));
+  }, 500);
+}
 
 
