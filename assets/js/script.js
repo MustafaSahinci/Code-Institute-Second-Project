@@ -5,44 +5,41 @@ window.onload = function(){
   document.getElementById('control').style.display = 'none';
 }
 
-// function goBack(){
-//   let back = document.getElementById(menuButtons);
-//   back.style.display = "";
-// }
+let easyMode = document.getElementById("easy");
+let mediumMode = document.getElementById("medium");
+let hardMode = document.getElementById("hard");
+let controlS = document.getElementById("control");
+let back = document.getElementById("menuButtons");
+
+function goBack(){
+  back.style.display = "";
+  easyMode.style.display = "none";
+  mediumMode.style.display = "none";
+  hardMode.style.display = "none";
+  controlS.style.display= "none";
+}
 
 function gameModeEasy() {
-  let easyMode = document.getElementById("easy");
-  let controlS = document.getElementById("control");
-  let menuButtons = document.getElementById("menuButtons");
- 
   easyMode.style.display = "";
   controlS.style.display= "";
-  menuButtons.style.display = "none";
+  back.style.display = "none";
 }
 
 function gameModeMedium() {
-  let mediumMode = document.getElementById("medium");
-  let controlS = document.getElementById("control");
-  let menuButtons = document.getElementById("menuButtons");
- 
   mediumMode.style.display = "";
   controlS.style.display= "";
-  menuButtons.style.display = "none";
+  back.style.display = "none";
 }
 
 function gameModeHard() {
-  let hardMode = document.getElementById("hard");
-  let controlS = document.getElementById("control");
-  let menuButtons = document.getElementById("menuButtons");
- 
   hardMode.style.display = "";
   controlS.style.display= "";
-  menuButtons.style.display = "none";
+  back.style.display = "none";
 }
 
 function initializeModal(modalID, buttonID) {
 // Get the modal element
-var modal = document.getElementById(modalID);
+let modal = document.getElementById(modalID);
 
 // Get the button that opens the modal
 var btn = document.getElementById(buttonID);
@@ -103,6 +100,8 @@ function flipCard() {
 
   checkForMatch();
   moves()
+  
+
 }
 
 
@@ -111,6 +110,8 @@ function moves() {
   let counter = parseInt(document.getElementById("counter-flips").innerText);
   document.getElementById("counter-flips").innerText = ++counter; 
 }
+
+let cardCorrect = 0;
 
 
 function checkForMatch() {
@@ -122,7 +123,14 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
-
+  cardCorrect++
+  console.log(cardCorrect)
+  if (cardCorrect === 4) {
+    setTimeout(function(){
+    alert("Congratulations! You found all the pairs!"); 
+  }, 1000)
+};
+  
   resetBoard();
 }
 
@@ -134,7 +142,7 @@ function unflipCards() {
     secondCard.classList.remove('flip');
 
     resetBoard();
-  }, 1500);
+  }, 1000);
 }
 
 function resetBoard() {
@@ -161,7 +169,7 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 cards1.forEach(card => card.addEventListener('click', flipCard));
 cards2.forEach(card => card.addEventListener('click', flipCard));
 
-// timer and flip count
+// countdown timer
 
 var label = document.getElementById("timer");
 var timer;
@@ -186,4 +194,7 @@ function startTimer() {
     }, 1000);
   }
 };
+
+// reset game
+
 
