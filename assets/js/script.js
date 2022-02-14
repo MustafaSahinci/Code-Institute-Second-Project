@@ -79,6 +79,7 @@ const cards2 = document.querySelectorAll('.flip-card-hard');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let start = false;
 
 function shuffle() {
   cards.forEach(card => {
@@ -104,14 +105,17 @@ shuffle();
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
-
+  if(!start) {
+    start = true
+    startTimer()
+  }
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
     // first click
     hasFlippedCard = true;
     firstCard = this;
-    startTimer()
+  
   
 
     return;
@@ -180,9 +184,9 @@ var label = document.getElementById("timer");
 var timer;
 var countdown = localStorage.getItem("countdown") || 60;
 
-var button = document.getElementById("button");
-var label = document.getElementById("timer");
-var timer;
+// var button = document.getElementById("button");
+// var label = document.getElementById("timer");
+// var timer;
 // var countdown = localStorage.getItem("countdown") || 60;
 
 function startTimer() {
@@ -203,19 +207,18 @@ function startTimer() {
 // reset game
 function resetGame() {
   setTimeout(function() {
-      // hasFlippedCard = false;
+      clearInterval(timer);
+      hasFlippedCard = false;
+      start = false;
       document.getElementById("counter-flips").innerText = 0; 
-      // [firstCard, secondCard] = [null, null];
+      [firstCard, secondCard] = [null, null];
       shuffle();
       cardCorrect = 0;
       cards.forEach((cardReset) => cardReset.classList.remove("flip"));
       cards1.forEach((cardReset) => cardReset.classList.remove("flip"));
       cards2.forEach((cardReset) => cardReset.classList.remove("flip"));
-      // resetBoard();
+      resetBoard();
       cards.forEach((card) => card.addEventListener("click", flipCard));
-      clearTimeout(timer);
-      clearTimeout(countdown);
-      startTimer();
   }, 500);
 }
 
