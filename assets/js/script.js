@@ -28,6 +28,7 @@ function gameModeEasy() {
   easyMode.style.display = "";
   controlS.style.display= "";
   back.style.display = "none";
+  gameStart.innerText = 60;
 }
 
 function gameModeMedium() {
@@ -35,6 +36,7 @@ function gameModeMedium() {
   mediumMode.style.display = "";
   controlS.style.display= "";
   back.style.display = "none";
+  gameStart.innerText = 90;
 }
 
 function gameModeHard() {
@@ -42,6 +44,7 @@ function gameModeHard() {
   hardMode.style.display = "";
   controlS.style.display= "";
   back.style.display = "none";
+  gameStart.innerText = 120;
 }
 
 // modals
@@ -188,27 +191,40 @@ function resetBoard() {
 
 // countdown timer
 
-var label = document.getElementById("timer");
-var timer;
+let gameStart = document.getElementById("timer");
+let timer;
+let countdown;
+
+function setTimer(){
+  if(difficulty === "easy") {
+    gameStart.innerText = 60;
+}
+}
+
+
 
 function startTimer() {
-  // if (!timer) {
-    let countdown = 30;
+    if(difficulty === "easy"){
+    countdown = 60;
+  } else if (difficulty === "medium"){
+    countdown = 90;
+  } else if (difficulty === "hard"){
+    countdown = 120;
+  }
     timer = setInterval(function() {
       countdown--;
-      label.innerText = countdown;
+      gameStart.innerText = countdown;
       if(cardCorrect === matchCount){
         clearInterval(timer);
         timeOn = false
-        alert("All done")
-      }
-      if (countdown <= 0) {
+        resetGame()
+      }else if (countdown <= 0) {
         clearInterval(timer);
         timeOn = false
         alert("All done");
+        resetGame()
       }
     }, 1000);
-  // }
 }
 
 // reset game
@@ -216,6 +232,13 @@ function resetGame() {
   setTimeout(function() {
     clearInterval(timer)
     timeOn = false
+    if(difficulty === "easy"){
+      gameStart.innerText = 60;
+      } else if(difficulty === "medium"){
+        gameStart.innerText = 90;
+      }else if(difficulty === "hard"){
+        gameStart.innerText = 120;
+      }
       hasFlippedCard = false;
       document.getElementById("counter-flips").innerText = 0; 
       [firstCard, secondCard] = [null, null];
