@@ -11,6 +11,7 @@ let hardMode = document.getElementById("hard");
 let controlS = document.getElementById("control");
 let back = document.getElementById("menuButtons");
 let end = document.getElementById("myModal2")
+let difficulty;
 
 // functions for gamemode buttons and Quit button
 function goBack(){
@@ -23,18 +24,21 @@ function goBack(){
 }
 
 function gameModeEasy() {
+  difficulty = "easy"
   easyMode.style.display = "";
   controlS.style.display= "";
   back.style.display = "none";
 }
 
 function gameModeMedium() {
+  difficulty = "medium"
   mediumMode.style.display = "";
   controlS.style.display= "";
   back.style.display = "none";
 }
 
 function gameModeHard() {
+  difficulty = "hard"
   hardMode.style.display = "";
   controlS.style.display= "";
   back.style.display = "none";
@@ -100,11 +104,16 @@ cards2.forEach(card => card.addEventListener('click', flipCard));
 
 shuffle();
 
+let timeOn = false
+
 // flip te cards
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
-  startTimer();
+  if(!timeOn){ 
+    timeOn = true    
+    startTimer();
+}
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
@@ -126,18 +135,22 @@ function moves() {
 
 // check match's
 let cardCorrect = 0;
+let matchCount;
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.image === secondCard.dataset.image;
-  let matchCount = checkDivAndReturnMatchCount();
+  matchCount = checkDivAndReturnMatchCount();
 
 
   isMatch ? disableCards(matchCount) : unflipCards();
 }
 function checkDivAndReturnMatchCount() {
-  if(easyMode) return  4;
-  if(mediumMode)return  6;
-  if(hardMode) return 8;
+  if(difficulty === "easy"){
+    return 4;  
+  }else if( difficulty === "medium"){ 
+    return 6;}
+  else if(difficulty === "hard"){
+     return 8; }
 }
 
 
@@ -179,28 +192,30 @@ var label = document.getElementById("timer");
 var timer;
 
 function startTimer() {
-  if (!timer) {
-    countdown = 30;
+  // if (!timer) {
+    let countdown = 30;
     timer = setInterval(function() {
       countdown--;
       label.innerText = countdown;
-      // if(cardCorrect === 8){
-      //   clearInterval(timer);
-        // alert("All done");
+      if(cardCorrect === matchCount){
+        clearInterval(timer);
+        timeOn = false
+        alert("All done")
+      }
       if (countdown <= 0) {
         clearInterval(timer);
+        timeOn = false
         alert("All done");
       }
-      }
     }, 1000);
-  }
+  // }
 }
 
 // reset game
 function resetGame() {
   setTimeout(function() {
     clearInterval(timer)
-
+    timeOn = false
       hasFlippedCard = false;
       document.getElementById("counter-flips").innerText = 0; 
       [firstCard, secondCard] = [null, null];
