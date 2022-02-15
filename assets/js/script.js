@@ -79,7 +79,7 @@ const cards2 = document.querySelectorAll('.flip-card-hard');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let start = false;
+
 
 function shuffle() {
   cards.forEach(card => {
@@ -105,10 +105,7 @@ shuffle();
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
-  if(!start) {
-    start = true
-    startTimer()
-  }
+  startTimer();
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
@@ -182,34 +179,27 @@ function resetBoard() {
 
 var label = document.getElementById("timer");
 var timer;
-var countdown = localStorage.getItem("countdown") || 60;
-
-// var button = document.getElementById("button");
-// var label = document.getElementById("timer");
-// var timer;
-// var countdown = localStorage.getItem("countdown") || 60;
 
 function startTimer() {
   if (!timer) {
     countdown = 10;
     timer = setInterval(function() {
       countdown--;
-      label.innerText = countdown
-      // localStorage.setItem("countdown", countdown);
+      label.innerText = countdown;
       if (countdown <= 0) {
         clearInterval(timer);
         alert("All done");
       }
     }, 1000);
   }
-};
+}
 
 // reset game
 function resetGame() {
   setTimeout(function() {
-      clearInterval(timer);
+    clearInterval(timer)
+    
       hasFlippedCard = false;
-      start = false;
       document.getElementById("counter-flips").innerText = 0; 
       [firstCard, secondCard] = [null, null];
       shuffle();
