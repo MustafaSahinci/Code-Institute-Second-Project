@@ -10,6 +10,7 @@ let mediumMode = document.getElementById("medium");
 let hardMode = document.getElementById("hard");
 let controlS = document.getElementById("control");
 let back = document.getElementById("menuButtons");
+let end = document.getElementById("myModal2")
 
 // functions for gamemode buttons and Quit button
 function goBack(){
@@ -65,6 +66,7 @@ window.addEventListener('click', function(event) {
 window.addEventListener('load', function() {
 initializeModal('myModal', 'myBtn');
 initializeModal('myModal1', 'myBtn1');
+initializeModal('myModal2', "");
 });
 
 // get all cards
@@ -127,17 +129,26 @@ let cardCorrect = 0;
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.image === secondCard.dataset.image;
+  let matchCount = checkDivAndReturnMatchCount();
 
-  isMatch ? disableCards() : unflipCards();
+
+  isMatch ? disableCards(matchCount) : unflipCards();
+}
+function checkDivAndReturnMatchCount() {
+  if(easyMode) return  4;
+  if(mediumMode)return  6;
+  if(hardMode) return 8;
 }
 
-function disableCards() {
+
+function disableCards(matchCount) {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
   cardCorrect++
   console.log(cardCorrect)
-  if (cardCorrect === 4) {
+  if (cardCorrect === matchCount) {
     setTimeout(function(){
+      // end.style.display = "block";
     alert("Congratulations! You found all the pairs!"); 
   }, 1000)
 }; 
@@ -173,9 +184,9 @@ function startTimer() {
     timer = setInterval(function() {
       countdown--;
       label.innerText = countdown;
-      if(cardCorrect === 4){
-        clearInterval(timer);
-        alert("All done");
+      // if(cardCorrect === 8){
+      //   clearInterval(timer);
+        // alert("All done");
       if (countdown <= 0) {
         clearInterval(timer);
         alert("All done");
