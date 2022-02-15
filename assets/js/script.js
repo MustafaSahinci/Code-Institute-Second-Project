@@ -182,7 +182,7 @@ var timer;
 
 function startTimer() {
   if (!timer) {
-    countdown = 10;
+    countdown = 30;
     timer = setInterval(function() {
       countdown--;
       label.innerText = countdown;
@@ -198,7 +198,7 @@ function startTimer() {
 function resetGame() {
   setTimeout(function() {
     clearInterval(timer)
-    
+
       hasFlippedCard = false;
       document.getElementById("counter-flips").innerText = 0; 
       [firstCard, secondCard] = [null, null];
