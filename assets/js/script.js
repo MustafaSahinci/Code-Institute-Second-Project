@@ -11,6 +11,7 @@ let hardMode = document.getElementById("hard");
 let controlS = document.getElementById("control");
 let back = document.getElementById("menuButtons");
 
+// functions for gamemode buttons and Quit button
 function goBack(){
   resetGame();
   back.style.display = "";
@@ -38,27 +39,22 @@ function gameModeHard() {
   back.style.display = "none";
 }
 
+// modals
+
 function initializeModal(modalID, buttonID) {
-// Get the modal element
+
 let modal = document.getElementById(modalID);
-
-// Get the button that opens the modal
 var btn = document.getElementById(buttonID);
-
-// Get the <span> element that closes the modal
 var span = modal.querySelector('.close');
 
-// When the user clicks on the button, open the modal
 btn.addEventListener('click', function() {
   modal.style.display = "block";
 });
 
-// When the user clicks on <span> (x), close the modal
 span.addEventListener('click', function() {
   modal.style.display = "none";
 });
 
-// When the user clicks anywhere outside of the modal, close it
 window.addEventListener('click', function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
@@ -71,7 +67,7 @@ initializeModal('myModal', 'myBtn');
 initializeModal('myModal1', 'myBtn1');
 });
 
-// flip cards
+// get all cards
 const cards = document.querySelectorAll('.flip-card');
 const cards1 = document.querySelectorAll('.flip-card-medium');
 const cards2 = document.querySelectorAll('.flip-card-hard');
@@ -80,7 +76,7 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 
-
+//shuffle the cards
 function shuffle() {
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * 8);
@@ -102,6 +98,7 @@ cards2.forEach(card => card.addEventListener('click', flipCard));
 
 shuffle();
 
+// flip te cards
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
@@ -109,33 +106,24 @@ function flipCard() {
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
-    // first click
     hasFlippedCard = true;
     firstCard = this;
   
-  
-
     return;
   }
-
-  // second click
   secondCard = this;
-
   checkForMatch();
   moves()
-  
-
 }
 
-
+// counter moves
 function moves() {
-
   let counter = parseInt(document.getElementById("counter-flips").innerText);
   document.getElementById("counter-flips").innerText = ++counter; 
 }
 
+// check match's
 let cardCorrect = 0;
-
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.image === secondCard.dataset.image;
@@ -189,6 +177,10 @@ function startTimer() {
       if (countdown <= 0) {
         clearInterval(timer);
         alert("All done");
+      if(cardCorrect === 4){
+        clearInterval(timer);
+        alert("All done");
+      }
       }
     }, 1000);
   }

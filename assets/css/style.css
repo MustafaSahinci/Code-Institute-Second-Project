@@ -151,15 +151,6 @@ span {
     font-size: 150%;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-a:hover {
-    color: lightblue;
-}
-
 .menu {
     height: 140px;
     width: 250px;
@@ -170,28 +161,20 @@ a:hover {
     align-items: center;
 }
 
+/* modal */
 .modalClass {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
 }
 
-/* Modal Content/Box */
 .modal {
     background-color: rgba(0, 0, 0, 0.8);
     margin: 15% auto;
@@ -203,7 +186,6 @@ a:hover {
     color: white;
 }
 
-/* The Close Button */
 .close {
     color: white;
     font-size: 28px;
