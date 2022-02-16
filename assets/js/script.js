@@ -76,6 +76,7 @@ initializeModal('myModal', 'myBtn');
 initializeModal('myModal1', 'myBtn1');
 });
 
+
 function endModal(){
   end.style.display = "block"
 
@@ -90,9 +91,12 @@ function endModal(){
   });
 
   document.getElementById("finalMoves").innerText = counter; 
-  document.getElementById("timeLeft").innerText = gameStart;
+  document.getElementById("timeLeft").innerText = timLeft;
   }
 
+function endGame(){
+  endModal()
+}
 
 // get all cards
 const cards = document.querySelectorAll('.flip-card');
@@ -150,9 +154,23 @@ function flipCard() {
 
 // counter moves
 
-let counter = parseInt(document.getElementById("counter-flips").innerText);
+// let moves = 0
+// let moves1 = document.getElementById("counter-flips")
+
+// function addMoves(){
+//   moves++;
+//   moves1.innerText = moves;
+// }
+
+let counter = parseInt(document.getElementById("counter-flips").innerHTML);
+counter.innerHTML = 0;
+let move = 0;
+
 function moves() {
-  document.getElementById("counter-flips").innerText = ++counter; 
+//   // let counter = parseInt(document.getElementById("counter-flips").innerText);
+//  counter = document.getElementById("counter-flips").innerText = ++counter; 
+move++;
+counter.innerHTML = move;
 }
 
 // check match's
@@ -212,6 +230,7 @@ function resetBoard() {
 let gameStart = document.getElementById("timer");
 let timer;
 let countdown;
+let timLeft = gameStart.innerText;
 
 function setTimer(){
   if(difficulty === "easy") {
@@ -257,6 +276,7 @@ function resetGame() {
       }else if(difficulty === "hard"){
         gameStart.innerText = 120;
       }
+      move = 0;
       hasFlippedCard = false;
       document.getElementById("counter-flips").innerText = 0; 
       [firstCard, secondCard] = [null, null];
