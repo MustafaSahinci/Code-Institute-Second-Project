@@ -161,16 +161,10 @@ function flipCard() {
 //   moves++;
 //   moves1.innerText = moves;
 // }
-
-let counter = parseInt(document.getElementById("counter-flips").innerHTML);
-counter.innerHTML = 0;
-let move = 0;
-
+let counter = parseInt(document.getElementById("counter-flips").innerText);
 function moves() {
-//   // let counter = parseInt(document.getElementById("counter-flips").innerText);
-//  counter = document.getElementById("counter-flips").innerText = ++counter; 
-move++;
-counter.innerHTML = move;
+  let counter = parseInt(document.getElementById("counter-flips").innerText);
+ counter = document.getElementById("counter-flips").innerText = ++counter; 
 }
 
 // check match's
@@ -287,7 +281,7 @@ function resetGame() {
       cards2.forEach((cardReset) => cardReset.classList.remove("flip"));
       resetBoard();
       cards.forEach((card) => card.addEventListener("click", flipCard));
-  }, 500);
+  }, 1500);
 }
 
 
