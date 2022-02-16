@@ -10,8 +10,8 @@ let mediumMode = document.getElementById("medium");
 let hardMode = document.getElementById("hard");
 let controlS = document.getElementById("control");
 let back = document.getElementById("menuButtons");
-let end = document.getElementById("myModal2")
-let span = modal.querySelector('.close');
+let end = document.getElementById("myModal2");
+let endSpan = end.querySelector('.close');
 let difficulty;
 
 // functions for gamemode buttons and Quit button
@@ -54,6 +54,7 @@ function initializeModal(modalID, buttonID) {
 
 let modal = document.getElementById(modalID);
 var btn = document.getElementById(buttonID);
+let span = modal.querySelector('.close');
 
 btn.addEventListener('click', function() {
   modal.style.display = "block";
@@ -77,19 +78,21 @@ initializeModal('myModal1', 'myBtn1');
 
 function endModal(){
   end.style.display = "block"
-  
 
-  span.addEventListener('click', function() {
+  endSpan.addEventListener('click', function() {
     end.style.display = "none";
   });
-  
+
   window.addEventListener('click', function(event) {
     if (event.target == end) {
       end.style.display = "none";
     }
   });
-  
-}
+
+  document.getElementById("finalMoves").innerText = counter; 
+  document.getElementById("timeLeft").innerText = gameStart;
+  }
+
 
 // get all cards
 const cards = document.querySelectorAll('.flip-card');
@@ -146,8 +149,9 @@ function flipCard() {
 }
 
 // counter moves
+
+let counter = parseInt(document.getElementById("counter-flips").innerText);
 function moves() {
-  let counter = parseInt(document.getElementById("counter-flips").innerText);
   document.getElementById("counter-flips").innerText = ++counter; 
 }
 
