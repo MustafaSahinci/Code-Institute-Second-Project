@@ -11,7 +11,9 @@ let hardMode = document.getElementById("hard");
 let controlS = document.getElementById("control");
 let back = document.getElementById("menuButtons");
 let end = document.getElementById("myModal2");
+let timeUp = document.getElementById("myModal3")
 let endSpan = end.querySelector('.close');
+let timeUpSpan = timeUp.querySelector(".close");
 let difficulty;
 
 // functions for gamemode buttons and Quit button
@@ -94,9 +96,20 @@ function endModal(){
   document.getElementById("timeLeft").innerText = timLeft;
   }
 
-function endGame(){
-  endModal()
+function timesUp(){
+    timeUp.style.display = "block"
+  
+    timeUpSpan.addEventListener('click', function() {
+      timeUp.style.display = "none";
+    });
+  
+    window.addEventListener('click', function(event) {
+      if (event.target == timeUp) {
+        timeUp.style.display = "none";
+      }
+    });
 }
+
 
 // get all cards
 const cards = document.querySelectorAll('.flip-card');
@@ -161,7 +174,7 @@ function flipCard() {
 //   moves++;
 //   moves1.innerText = moves;
 // }
-let counter = parseInt(document.getElementById("counter-flips").innerText);
+
 function moves() {
   let counter = parseInt(document.getElementById("counter-flips").innerText);
  counter = document.getElementById("counter-flips").innerText = ++counter; 
@@ -226,17 +239,9 @@ let timer;
 let countdown;
 let timLeft = gameStart.innerText;
 
-function setTimer(){
-  if(difficulty === "easy") {
-    gameStart.innerText = 60;
-}
-}
-
-
-
 function startTimer() {
     if(difficulty === "easy"){
-    countdown = 60;
+    countdown = 10;
   } else if (difficulty === "medium"){
     countdown = 90;
   } else if (difficulty === "hard"){
@@ -252,7 +257,8 @@ function startTimer() {
       }else if (countdown <= 0) {
         clearInterval(timer);
         timeOn = false
-        alert("All done");
+        timesUp()
+        // alert("All done");
         resetGame()
       }
     }, 1000);
