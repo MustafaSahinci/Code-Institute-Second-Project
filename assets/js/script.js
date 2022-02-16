@@ -11,6 +11,7 @@ let hardMode = document.getElementById("hard");
 let controlS = document.getElementById("control");
 let back = document.getElementById("menuButtons");
 let end = document.getElementById("myModal2")
+let span = modal.querySelector('.close');
 let difficulty;
 
 // functions for gamemode buttons and Quit button
@@ -53,7 +54,6 @@ function initializeModal(modalID, buttonID) {
 
 let modal = document.getElementById(modalID);
 var btn = document.getElementById(buttonID);
-var span = modal.querySelector('.close');
 
 btn.addEventListener('click', function() {
   modal.style.display = "block";
@@ -73,8 +73,23 @@ window.addEventListener('click', function(event) {
 window.addEventListener('load', function() {
 initializeModal('myModal', 'myBtn');
 initializeModal('myModal1', 'myBtn1');
-initializeModal('myModal2', "");
 });
+
+function endModal(){
+  end.style.display = "block"
+  
+
+  span.addEventListener('click', function() {
+    end.style.display = "none";
+  });
+  
+  window.addEventListener('click', function(event) {
+    if (event.target == end) {
+      end.style.display = "none";
+    }
+  });
+  
+}
 
 // get all cards
 const cards = document.querySelectorAll('.flip-card');
@@ -144,7 +159,7 @@ function checkForMatch() {
   let isMatch = firstCard.dataset.image === secondCard.dataset.image;
   matchCount = checkDivAndReturnMatchCount();
 
-
+  
   isMatch ? disableCards(matchCount) : unflipCards();
 }
 function checkDivAndReturnMatchCount() {
@@ -164,11 +179,10 @@ function disableCards(matchCount) {
   console.log(cardCorrect)
   if (cardCorrect === matchCount) {
     setTimeout(function(){
-      // end.style.display = "block";
-    alert("Congratulations! You found all the pairs!"); 
+      endModal();
+    // alert("Congratulations! You found all the pairs!"); 
   }, 1000)
-}; 
-  
+};
   resetBoard();
 }
 
