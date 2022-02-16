@@ -19,6 +19,9 @@ let difficulty;
 // functions for gamemode buttons and Quit button
 function goBack(){
   resetGame();
+  setTimeout(function() {
+    myModal.style.display = "none";
+  });
   back.style.display = "";
   easyMode.style.display = "none";
   mediumMode.style.display = "none";
@@ -287,7 +290,16 @@ function resetGame() {
       cards2.forEach((cardReset) => cardReset.classList.remove("flip"));
       resetBoard();
       cards.forEach((card) => card.addEventListener("click", flipCard));
+      cards1.forEach((card) => card.addEventListener("click", flipCard));
+      cards2.forEach((card) => card.addEventListener("click", flipCard));
   }, 1500);
+}
+
+
+function audio(){
+  document.getElementById('player').play()
+  document.getElementById('player').pause()
+  document.getElementById('player').muted=!document.getElementById('player').muted
 }
 
 
