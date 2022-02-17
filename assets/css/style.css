@@ -82,7 +82,9 @@ img {
     transition: transform.2s;
 }
 
-.flip-card.flip, .flip-card-medium.flip, .flip-card-hard.flip {
+.flip-card.flip,
+.flip-card-medium.flip,
+.flip-card-hard.flip {
     transform: rotateY(180deg);
 }
 
@@ -125,7 +127,6 @@ button:active {
 
 button:hover {
     background-color: lightblue;
-
 }
 
 .flips {
@@ -229,7 +230,7 @@ body{
 
 /* for media-queries from 440px wide and down */
 @media screen and (max-width: 440px){
-    .header{
-        font-size: 70%;
-    }
+.header{
+    font-size: 70%;
+}
 }
