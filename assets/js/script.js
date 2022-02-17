@@ -1,119 +1,14 @@
-window.onload = function(){
-  document.getElementById('easy').style.display = 'none';
-  document.getElementById('medium').style.display = 'none';
-  document.getElementById('hard').style.display = 'none';
-  document.getElementById('control').style.display = 'none';
-}
-
 let easyMode = document.getElementById("easy");
 let mediumMode = document.getElementById("medium");
 let hardMode = document.getElementById("hard");
 let controlS = document.getElementById("control");
 let back = document.getElementById("menuButtons");
+// modals
 let end = document.getElementById("myModal2");
 let timeUp = document.getElementById("myModal3")
 let endSpan = end.querySelector('.close');
 let timeUpSpan = timeUp.querySelector(".close");
 let difficulty;
-
-// functions for gamemode buttons and Quit button
-function goBack(){
-  resetGame();
-  setTimeout(function() {
-    myModal.style.display = "none";
-  });
-  back.style.display = "";
-  easyMode.style.display = "none";
-  mediumMode.style.display = "none";
-  hardMode.style.display = "none";
-  controlS.style.display= "none";
-}
-
-function gameModeEasy() {
-  difficulty = "easy"
-  easyMode.style.display = "";
-  controlS.style.display= "";
-  back.style.display = "none";
-  gameStart.innerText = 60;
-}
-
-function gameModeMedium() {
-  difficulty = "medium"
-  mediumMode.style.display = "";
-  controlS.style.display= "";
-  back.style.display = "none";
-  gameStart.innerText = 90;
-}
-
-function gameModeHard() {
-  difficulty = "hard"
-  hardMode.style.display = "";
-  controlS.style.display= "";
-  back.style.display = "none";
-  gameStart.innerText = 120;
-}
-
-// modals
-
-function initializeModal(modalID, buttonID) {
-
-let modal = document.getElementById(modalID);
-var btn = document.getElementById(buttonID);
-let span = modal.querySelector('.close');
-
-btn.addEventListener('click', function() {
-  modal.style.display = "block";
-});
-
-span.addEventListener('click', function() {
-  modal.style.display = "none";
-});
-
-window.addEventListener('click', function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-});
-}
-
-window.addEventListener('load', function() {
-initializeModal('myModal', 'myBtn');
-initializeModal('myModal1', 'myBtn1');
-});
-
-
-function endModal(){
-  end.style.display = "block"
-
-  endSpan.addEventListener('click', function() {
-    end.style.display = "none";
-  });
-
-  window.addEventListener('click', function(event) {
-    if (event.target == end) {
-      end.style.display = "none";
-    }
-  });
-
-  document.getElementById("finalMoves").innerText = counter; 
-  document.getElementById("timeLeft").innerText = timLeft;
-  }
-
-function timesUp(){
-    timeUp.style.display = "block"
-  
-    timeUpSpan.addEventListener('click', function() {
-      timeUp.style.display = "none";
-    });
-  
-    window.addEventListener('click', function(event) {
-      if (event.target == timeUp) {
-        timeUp.style.display = "none";
-      }
-    });
-}
-
-
 // get all cards
 const cards = document.querySelectorAll('.flip-card');
 const cards1 = document.querySelectorAll('.flip-card-medium');
@@ -121,7 +16,15 @@ const cards2 = document.querySelectorAll('.flip-card-hard');
 
 let hasFlippedCard = false;
 let lockBoard = false;
+let timeOn = false
+let cardCorrect = 0;
+let matchCount;
 let firstCard, secondCard;
+// countdown timer
+let gameStart = document.getElementById("timer");
+let timer;
+let countdown;
+let timLeft = gameStart.innerText;
 
 //shuffle the cards
 function shuffle() {
@@ -145,22 +48,114 @@ cards2.forEach(card => card.addEventListener('click', flipCard));
 
 shuffle();
 
-let timeOn = false
+// functions for gamemode buttons and Quit button
+function goBack() {
+  resetGame();
+  setTimeout(function () {
+    myModal.style.display = "none";
+  });
+  back.style.display = "";
+  easyMode.style.display = "none";
+  mediumMode.style.display = "none";
+  hardMode.style.display = "none";
+  controlS.style.display = "none";
+}
+
+function gameModeEasy() {
+  difficulty = "easy"
+  easyMode.style.display = "";
+  controlS.style.display = "";
+  back.style.display = "none";
+  gameStart.innerText = 60;
+}
+
+function gameModeMedium() {
+  difficulty = "medium"
+  mediumMode.style.display = "";
+  controlS.style.display = "";
+  back.style.display = "none";
+  gameStart.innerText = 90;
+}
+
+function gameModeHard() {
+  difficulty = "hard"
+  hardMode.style.display = "";
+  controlS.style.display = "";
+  back.style.display = "none";
+  gameStart.innerText = 120;
+}
+
+// modals
+
+function initializeModal(modalID, buttonID) {
+
+  let modal = document.getElementById(modalID);
+  var btn = document.getElementById(buttonID);
+  let span = modal.querySelector('.close');
+
+  btn.addEventListener('click', function () {
+    modal.style.display = "block";
+  });
+
+  span.addEventListener('click', function () {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener('click', function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+
+window.addEventListener('load', function () {
+  initializeModal('myModal', 'myBtn');
+  initializeModal('myModal1', 'myBtn1');
+});
+
+
+function endModal() {
+  end.style.display = "block"
+
+  endSpan.addEventListener('click', function () {
+    end.style.display = "none";
+  });
+
+  window.addEventListener('click', function (event) {
+    if (event.target == end) {
+      end.style.display = "none";
+    }
+  });
+}
+
+function timesUp() {
+  timeUp.style.display = "block"
+
+  timeUpSpan.addEventListener('click', function () {
+    timeUp.style.display = "none";
+  });
+
+  window.addEventListener('click', function (event) {
+    if (event.target == timeUp) {
+      timeUp.style.display = "none";
+    }
+  });
+}
 
 // flip te cards
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
-  if(!timeOn){ 
-    timeOn = true    
+  if (!timeOn) {
+    timeOn = true
     startTimer();
-}
+  }
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
     hasFlippedCard = true;
     firstCard = this;
-  
+
     return;
   }
   secondCard = this;
@@ -168,39 +163,32 @@ function flipCard() {
   moves()
 }
 
-// counter moves
 
-// let moves = 0
-// let moves1 = document.getElementById("counter-flips")
-
-// function addMoves(){
-//   moves++;
-//   moves1.innerText = moves;
-// }
 
 function moves() {
   let counter = parseInt(document.getElementById("counter-flips").innerText);
- counter = document.getElementById("counter-flips").innerText = ++counter; 
+  counter = document.getElementById("counter-flips").innerText = ++counter;
 }
 
 // check match's
-let cardCorrect = 0;
-let matchCount;
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.image === secondCard.dataset.image;
   matchCount = checkDivAndReturnMatchCount();
 
-  
+
   isMatch ? disableCards(matchCount) : unflipCards();
 }
+
 function checkDivAndReturnMatchCount() {
-  if(difficulty === "easy"){
-    return 4;  
-  }else if( difficulty === "medium"){ 
-    return 6;}
-  else if(difficulty === "hard"){
-     return 8; }
+  if (difficulty === "easy") {
+    return 4;
+  } else if (difficulty === "medium") {
+    return 6;
+  }
+  else if (difficulty === "hard") {
+    return 8;
+  }
 }
 
 
@@ -210,11 +198,10 @@ function disableCards(matchCount) {
   cardCorrect++
   console.log(cardCorrect)
   if (cardCorrect === matchCount) {
-    setTimeout(function(){
+    setTimeout(function () {
       endModal();
-    // alert("Congratulations! You found all the pairs!"); 
-  }, 1000)
-};
+    }, 1000)
+  };
   resetBoard();
 }
 
@@ -237,69 +224,70 @@ function resetBoard() {
 
 // countdown timer
 
-let gameStart = document.getElementById("timer");
-let timer;
-let countdown;
-let timLeft = gameStart.innerText;
-
 function startTimer() {
-    if(difficulty === "easy"){
+  if (difficulty === "easy") {
     countdown = 10;
-  } else if (difficulty === "medium"){
+  } else if (difficulty === "medium") {
     countdown = 90;
-  } else if (difficulty === "hard"){
+  } else if (difficulty === "hard") {
     countdown = 120;
   }
-    timer = setInterval(function() {
-      countdown--;
-      gameStart.innerText = countdown;
-      if(cardCorrect === matchCount){
-        clearInterval(timer);
-        timeOn = false
-        resetGame()
-      }else if (countdown <= 0) {
-        clearInterval(timer);
-        timeOn = false
-        timesUp()
-        // alert("All done");
-        resetGame()
-      }
-    }, 1000);
+  timer = setInterval(function () {
+    countdown--;
+    gameStart.innerText = countdown;
+    if (cardCorrect === matchCount) {
+      clearInterval(timer);
+      timeOn = false
+      resetGame()
+    } else if (countdown <= 0) {
+      clearInterval(timer);
+      timeOn = false
+      timesUp()
+      // alert("All done");
+      resetGame()
+    }
+  }, 1000);
 }
 
 // reset game
 function resetGame() {
-  setTimeout(function() {
+  setTimeout(function () {
     clearInterval(timer)
     timeOn = false
-    if(difficulty === "easy"){
+    if (difficulty === "easy") {
       gameStart.innerText = 60;
-      } else if(difficulty === "medium"){
-        gameStart.innerText = 90;
-      }else if(difficulty === "hard"){
-        gameStart.innerText = 120;
-      }
-      move = 0;
-      hasFlippedCard = false;
-      document.getElementById("counter-flips").innerText = 0; 
-      [firstCard, secondCard] = [null, null];
-      shuffle();
-      cardCorrect = 0;
-      cards.forEach((cardReset) => cardReset.classList.remove("flip"));
-      cards1.forEach((cardReset) => cardReset.classList.remove("flip"));
-      cards2.forEach((cardReset) => cardReset.classList.remove("flip"));
-      resetBoard();
-      cards.forEach((card) => card.addEventListener("click", flipCard));
-      cards1.forEach((card) => card.addEventListener("click", flipCard));
-      cards2.forEach((card) => card.addEventListener("click", flipCard));
+    } else if (difficulty === "medium") {
+      gameStart.innerText = 90;
+    } else if (difficulty === "hard") {
+      gameStart.innerText = 120;
+    }
+    move = 0;
+    hasFlippedCard = false;
+    document.getElementById("counter-flips").innerText = 0;
+    [firstCard, secondCard] = [null, null];
+    shuffle();
+    cardCorrect = 0;
+    cards.forEach((cardReset) => cardReset.classList.remove("flip"));
+    cards1.forEach((cardReset) => cardReset.classList.remove("flip"));
+    cards2.forEach((cardReset) => cardReset.classList.remove("flip"));
+    resetBoard();
+    cards.forEach((card) => card.addEventListener("click", flipCard));
+    cards1.forEach((card) => card.addEventListener("click", flipCard));
+    cards2.forEach((card) => card.addEventListener("click", flipCard));
   }, 1500);
 }
 
 
-function audio(){
+function audio() {
   document.getElementById('player').play()
   document.getElementById('player').pause()
-  document.getElementById('player').muted=!document.getElementById('player').muted
+  document.getElementById('player').muted = !document.getElementById('player').muted
 }
 
+window.onload = function () {
+  document.getElementById('easy').style.display = 'none';
+  document.getElementById('medium').style.display = 'none';
+  document.getElementById('hard').style.display = 'none';
+  document.getElementById('control').style.display = 'none';
+}
 
