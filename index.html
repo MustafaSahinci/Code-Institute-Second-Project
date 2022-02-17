@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="spongebob, a spongebob memory game">
     <meta name="keywords" content="spongebob, Memory game, flip game, card, cards,">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Spongebob Memory Game</title>
@@ -14,22 +15,32 @@
 
 <body>
     <header class="header">
-        <!-- <audio  loop src="assets/audio/song.mp3" type="audio/mpeg">
-        <div>
+        <!-- <audio  loop src="assets/audio/song.mp3" type="audio/mpeg"> -->
+        <!-- <div>
             <button onclick="">Play</button>
              <button onclick="">Pause</button>
              <button onclick="">Mute/ Unmute</button>
-        </div>
+        </div> -->
         <div>
-            <audio controls loop src="assets/audio/song.mp3" type="audio/mpeg">
+            <!-- <audio controls loop src="assets/audio/song.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio> -->
         <h1>Spongebob Memory Game</h1>
         <h2>Find spongebob and his friends </h2>
         </div>
     </header>
+    <!-- flips and timer -->
+    <section id="flipsCounter" class="counterflips">
+        <div class="flips">
+            <h3>Flips</h3>
+            <span id="counter-flips">0</span>
+            <h3>timer</h3>
+            <span id="timer">0</span>
+        </div>
+    </section>
     <section class="media">
         <!-- Game Menu -->
+        
         <div class="menu" id="menuButtons">
             <button id="myBtn" class="button">Play!</button>
             <div id="myModal" class="modalClass">
@@ -228,13 +239,6 @@
             <button onclick="resetGame()" class="button">Reset</button>
             <button onclick=quit() class="button">Quit</button>
         </div>
-        <div class="flips">
-            <h3>Flips</h3>
-            <span id="counter-flips">0</span>
-            <h3>timer</h3>
-            <span id="timer">0</span>
-        </div>
-
     </section>
 
     <script src="assets/js/script.js"></script>

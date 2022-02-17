@@ -4,6 +4,7 @@ let mediumMode = document.getElementById("medium");
 let hardMode = document.getElementById("hard");
 let controls = document.getElementById("control");
 let homePage = document.getElementById("menuButtons");
+let flipTimeLeft = document.getElementById("flipsCounter") 
 // Modals
 let end = document.getElementById("myModal2");
 let timeUp = document.getElementById("myModal3")
@@ -14,7 +15,7 @@ let difficulty;
 const cards = document.querySelectorAll('.flip-card');
 const cards1 = document.querySelectorAll('.flip-card-medium');
 const cards2 = document.querySelectorAll('.flip-card-hard');
-
+// flip cards, check match and count
 let hasFlippedCard = false;
 let lockBoard = false;
 let cardCorrect = 0;
@@ -61,12 +62,14 @@ function quit() {
   mediumMode.style.display = "none";
   hardMode.style.display = "none";
   controls.style.display = "none";
+  flipTimeLeft.style.display = "none"
 }
 
 function gameModeEasy() {
   difficulty = "easy"
   easyMode.style.display = "";
   controls.style.display = "";
+  flipTimeLeft.style.display = "";
   homePage.style.display = "none";
   gameStart.innerText = 60;
 }
@@ -75,6 +78,7 @@ function gameModeMedium() {
   difficulty = "medium"
   mediumMode.style.display = "";
   controls.style.display = "";
+  flipTimeLeft.style.display = "";
   homePage.style.display = "none";
   gameStart.innerText = 90;
 }
@@ -83,6 +87,7 @@ function gameModeHard() {
   difficulty = "hard"
   hardMode.style.display = "";
   controls.style.display = "";
+  flipTimeLeft.style.display = "";
   homePage.style.display = "none";
   gameStart.innerText = 120;
 }
@@ -144,7 +149,7 @@ function timesUp() {
   });
 }
 
-// flip te cards
+// flip the cards
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
@@ -172,7 +177,7 @@ function moves() {
   counter = document.getElementById("counter-flips").innerText = ++counter;
 }
 
-// check match's
+// check for match's and count them
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.image === secondCard.dataset.image;
@@ -221,8 +226,6 @@ function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
 }
-
-
 
 // countdown timer
 function startTimer() {
@@ -290,5 +293,6 @@ window.onload = function () {
   document.getElementById('medium').style.display = 'none';
   document.getElementById('hard').style.display = 'none';
   document.getElementById('control').style.display = 'none';
+  flipTimeLeft.style.display = "none";
 }
 
