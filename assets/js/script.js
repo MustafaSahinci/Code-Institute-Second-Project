@@ -281,13 +281,6 @@ function resetGame() {
   }, 1500);
 }
 
-
-function audio() {
-  document.getElementById('player').play()
-  document.getElementById('player').pause()
-  document.getElementById('player').muted = !document.getElementById('player').muted
-}
-
 window.onload = function () {
   document.getElementById('easy').style.display = 'none';
   document.getElementById('medium').style.display = 'none';

@@ -131,19 +131,16 @@ button:hover {
 
 .flips {
     padding: 10px;
-    color: white;
     height: 70px;
     width: 285px;
     display: inline-flex;
     align-items: center;
     justify-content: space-around;
-    background: black;
-    border-radius: 10px;
 }
 
 .counterflips {
     height: 70px;
-    width: 285px;
+    width: 385px;
     margin: 10px auto;
 }
 
@@ -205,6 +202,19 @@ span {
     text-decoration: none;
     cursor: pointer;
 }
+
+.playbutton {
+    height: 70px;
+    width: 90px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.playbutton > h1:hover {
+    color: white;
+}
+
 
 /* media queries */
 /* for media-queries from 600px wide and down */
