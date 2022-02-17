@@ -130,6 +130,11 @@ function endModal() {
       end.style.display = "none";
     }
   });
+
+  let flap = document.getElementById("flap")
+  flap.innerText = document.getElementById("counter-flips").innerText
+  let left = document.getElementById("timeLeft")
+  left.innerText = document.getElementById("timer").innerText
 }
 
 function timesUp() {
@@ -220,7 +225,7 @@ function resetBoard() {
 // countdown timer
 function startTimer() {
   if (difficulty === "easy") {
-    countdown = 10;
+    countdown = 15;
   } else if (difficulty === "medium") {
     countdown = 90;
   } else if (difficulty === "hard") {
