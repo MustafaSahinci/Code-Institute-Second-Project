@@ -240,8 +240,17 @@ span {
 }
 
 .counterflips{
-    width: 380px;
+    width: 100%;
+    display: inline-flex;
 }
+
+/* .flips {
+    height: 10px;
+}
+
+.playbutton{
+    height: 10px;
+} */
 
 body{
     height: 109vh;
@@ -252,5 +261,6 @@ body{
 @media screen and (max-width: 440px){
 .header{
     font-size: 70%;
+    height: 145px;
 }
 }
