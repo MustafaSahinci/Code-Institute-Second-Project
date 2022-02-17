@@ -93,9 +93,7 @@ function gameModeHard() {
 }
 
 // modals
-
 function initializeModal(modalId, buttonId) {
-
   let modal = document.getElementById(modalId);
   let btn = document.getElementById(buttonId);
   let span = modal.querySelector('.close');
@@ -119,7 +117,6 @@ window.addEventListener('load', function () {
   initializeModal('myModal', 'myBtn');
   initializeModal('myModal1', 'myBtn1');
 });
-
 
 function endModal() {
   end.style.display = "block"
@@ -158,11 +155,9 @@ function flipCard() {
     startTimer();
   }
   this.classList.add('flip');
-
   if (!hasFlippedCard) {
     hasFlippedCard = true;
     firstCard = this;
-
     return;
   }
   secondCard = this;
@@ -178,12 +173,9 @@ function moves() {
 }
 
 // check for match's and count them
-
 function checkForMatch() {
   let isMatch = firstCard.dataset.image === secondCard.dataset.image;
   matchCount = checkDivAndReturnMatchCount();
-
-
   isMatch ? disableCards(matchCount) : unflipCards();
 }
 
@@ -192,21 +184,20 @@ function checkDivAndReturnMatchCount() {
     return 4;
   } else if (difficulty === "medium") {
     return 6;
-  }
-  else if (difficulty === "hard") {
+  } else if (difficulty === "hard") {
     return 8;
   }
 }
-
 
 function disableCards(matchCount) {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
   cardCorrect++
-  console.log(cardCorrect)
   if (cardCorrect === matchCount) {
     setTimeout(function () {
       endModal();
+      clearInterval(timer);
+      resetGame();
     }, 1000)
   };
   resetBoard();
@@ -214,7 +205,6 @@ function disableCards(matchCount) {
 
 function unflipCards() {
   lockBoard = true;
-
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
@@ -239,15 +229,9 @@ function startTimer() {
   timer = setInterval(function () {
     countdown--;
     gameStart.innerText = countdown;
-    if (cardCorrect === matchCount) {
+    if (countdown <= 0) {
       clearInterval(timer);
-      timeOn = false
-      resetGame()
-    } else if (countdown <= 0) {
-      clearInterval(timer);
-      timeOn = false
       timesUp()
-      // alert("All done");
       resetGame()
     }
   }, 1000);

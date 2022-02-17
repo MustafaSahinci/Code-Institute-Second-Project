@@ -22,8 +22,6 @@ body {
     background-size: cover;
 }
 
-
-
 img {
     width: 100px;
 }
@@ -215,7 +213,6 @@ span {
     color: white;
 }
 
-
 /* media queries */
 /* for media-queries from 600px wide and down */
 @media screen and (max-width: 600px){
@@ -243,14 +240,6 @@ span {
     width: 100%;
     display: inline-flex;
 }
-
-/* .flips {
-    height: 10px;
-}
-
-.playbutton{
-    height: 10px;
-} */
 
 body{
     height: 109vh;
