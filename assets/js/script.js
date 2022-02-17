@@ -4,10 +4,10 @@ let mediumMode = document.getElementById("medium");
 let hardMode = document.getElementById("hard");
 let controls = document.getElementById("control");
 let homePage = document.getElementById("menuButtons");
-let flipTimeLeft = document.getElementById("flipsCounter") 
+let flipTimeLeft = document.getElementById("flipsCounter");
 // Modals
 let end = document.getElementById("myModal2");
-let timeUp = document.getElementById("myModal3")
+let timeUp = document.getElementById("myModal3");
 let endSpan = end.querySelector('.close');
 let timeUpSpan = timeUp.querySelector(".close");
 let difficulty;
@@ -22,11 +22,10 @@ let cardCorrect = 0;
 let matchCount;
 let firstCard, secondCard;
 // countdown timer
-let timeOn = false
+let timeOn = false;
 let gameStart = document.getElementById("timer");
 let timer;
 let countdown;
-let timLeft = gameStart.innerText;
 
 
 //shuffle the cards
@@ -43,7 +42,7 @@ function shuffle() {
     let randomPos = Math.floor(Math.random() * 16);
     card.style.order = randomPos;
   });
-};
+}
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 cards1.forEach(card => card.addEventListener('click', flipCard));
@@ -62,11 +61,11 @@ function quit() {
   mediumMode.style.display = "none";
   hardMode.style.display = "none";
   controls.style.display = "none";
-  flipTimeLeft.style.display = "none"
+  flipTimeLeft.style.display = "none";
 }
 
 function gameModeEasy() {
-  difficulty = "easy"
+  difficulty = "easy";
   easyMode.style.display = "";
   controls.style.display = "";
   flipTimeLeft.style.display = "";
@@ -75,7 +74,7 @@ function gameModeEasy() {
 }
 
 function gameModeMedium() {
-  difficulty = "medium"
+  difficulty = "medium";
   mediumMode.style.display = "";
   controls.style.display = "";
   flipTimeLeft.style.display = "";
@@ -84,7 +83,7 @@ function gameModeMedium() {
 }
 
 function gameModeHard() {
-  difficulty = "hard"
+  difficulty = "hard";
   hardMode.style.display = "";
   controls.style.display = "";
   flipTimeLeft.style.display = "";
@@ -119,7 +118,7 @@ window.addEventListener('load', function () {
 });
 
 function endModal() {
-  end.style.display = "block"
+  end.style.display = "block";
 
   endSpan.addEventListener('click', function () {
     end.style.display = "none";
@@ -131,14 +130,14 @@ function endModal() {
     }
   });
 
-  let flap = document.getElementById("flap")
-  flap.innerText = document.getElementById("counter-flips").innerText
-  let left = document.getElementById("timeLeft")
-  left.innerText = document.getElementById("timer").innerText
+  let flap = document.getElementById("flap");
+  flap.innerText = document.getElementById("counter-flips").innerText;
+  let left = document.getElementById("timeLeft");
+  left.innerText = document.getElementById("timer").innerText;
 }
 
 function timesUp() {
-  timeUp.style.display = "block"
+  timeUp.style.display = "block";
 
   timeUpSpan.addEventListener('click', function () {
     timeUp.style.display = "none";
@@ -156,7 +155,7 @@ function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
   if (!timeOn) {
-    timeOn = true
+    timeOn = true;
     startTimer();
   }
   this.classList.add('flip');
@@ -167,7 +166,7 @@ function flipCard() {
   }
   secondCard = this;
   checkForMatch();
-  moves()
+  moves();
 }
 
 
@@ -197,14 +196,14 @@ function checkDivAndReturnMatchCount() {
 function disableCards(matchCount) {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
-  cardCorrect++
+  cardCorrect++;
   if (cardCorrect === matchCount) {
     setTimeout(function () {
       endModal();
       clearInterval(timer);
       resetGame();
-    }, 1000)
-  };
+    }, 1000);
+  }
   resetBoard();
 }
 
@@ -236,8 +235,8 @@ function startTimer() {
     gameStart.innerText = countdown;
     if (countdown <= 0) {
       clearInterval(timer);
-      timesUp()
-      resetGame()
+      timesUp();
+      resetGame();
     }
   }, 1000);
 }
@@ -245,8 +244,8 @@ function startTimer() {
 // reset game
 function resetGame() {
   setTimeout(function () {
-    clearInterval(timer)
-    timeOn = false
+    clearInterval(timer);
+    timeOn = false;
     if (difficulty === "easy") {
       gameStart.innerText = 60;
     } else if (difficulty === "medium") {
@@ -254,7 +253,6 @@ function resetGame() {
     } else if (difficulty === "hard") {
       gameStart.innerText = 120;
     }
-    move = 0;
     cardCorrect = 0;
     shuffle();
     resetBoard();
@@ -276,5 +274,4 @@ window.onload = function () {
   document.getElementById('hard').style.display = 'none';
   document.getElementById('control').style.display = 'none';
   flipTimeLeft.style.display = "none";
-}
-
+};

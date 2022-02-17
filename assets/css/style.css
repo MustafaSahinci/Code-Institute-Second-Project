@@ -17,7 +17,7 @@ h3 {
 }
 
 body {
-    height: 100%;
+    height: 815px;
     background: url(../images/spongebob1.png) no-repeat center center;
     background-size: cover;
 }
@@ -241,15 +241,10 @@ span {
     display: inline-flex;
 }
 
-body{
-    height: 109vh;
-}
-}
-
 /* for media-queries from 440px wide and down */
 @media screen and (max-width: 440px){
 .header{
     font-size: 70%;
     height: 145px;
 }
-}
+};
