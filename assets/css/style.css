@@ -34,6 +34,7 @@ img {
     text-align: center;
 }
 
+/* memory game */
 .flip-game {
     width: 500px;
     height: 500px;
@@ -76,7 +77,7 @@ img {
 .flip-card:active,
 .flip-card-medium:active,
 .flip-card-hard:active {
-    transform: scale(95%);
+    transform: scale(0.97);
     transition: transform.2s;
 }
 
@@ -100,34 +101,28 @@ img {
     transform: rotateY(180deg);
 }
 
+/* buttons */
 .controls {
     height: 75px;
     width: 215px;
     margin: 20px auto;
 }
 
-.button {
+button {
     background: black;
     color: white;
     font-family: spfont, sans-serif;
     font-size: 150%;
     padding: 10px;
-    border: 1px solid black;
     border-radius: 10px;
-    transform: scale(1);
     letter-spacing: 1px;
-}
-
-button:active {
-    transform: scale(95%);
-    transition: transform.2s;
 }
 
 button:hover {
     background-color: lightblue;
 }
 
-.flips {
+.moves {
     padding: 10px;
     height: 70px;
     width: 285px;
@@ -147,20 +142,6 @@ button:hover {
     width: 210px;
     display: inline-flex;
     justify-content: space-between;
-}
-
-span {
-    font-size: 150%;
-}
-
-.menu {
-    height: 140px;
-    width: 250px;
-    margin: 200px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 }
 
 /* modal */
@@ -188,6 +169,20 @@ span {
     color: white;
 }
 
+.menu {
+    height: 140px;
+    width: 250px;
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+span {
+    font-size: 150%;
+}
+
 .close {
     color: white;
     font-size: 28px;
@@ -201,6 +196,7 @@ span {
     cursor: pointer;
 }
 
+/* audio */
 .playbutton {
     height: 70px;
     width: 90px;
@@ -209,42 +205,48 @@ span {
     align-items: center;
 }
 
-.playbutton > h1:hover {
+a {
+    font-size: 150%;
+}
+
+a:hover {
     color: white;
 }
 
 /* media queries */
 /* for media-queries from 600px wide and down */
-@media screen and (max-width: 600px){
-.modal {
-    width: 90%;
+@media screen and (max-width: 600px) {
+    .modal {
+        width: 90%;
+    }
 }
-}
+
 /* for media-queries from 560px wide and down */
-@media screen and (max-width: 560px){
-.header {
-    width: 100%;
-    font-size: 80%;
+@media screen and (max-width: 560px) {
+    .header {
+        width: 100%;
+        font-size: 80%;
     }
 
-.flip-game {
-    width: 100%
+    .flip-game {
+        width: 100%
+    }
+
+    .controls {
+        height: 80px;
+        width: 215px;
+    }
+
+    .counterflips {
+        width: 100%;
+        display: inline-flex;
+    }
 }
 
-.controls{
-    height: 80px;
-    width: 215px;
-}
-
-.counterflips{
-    width: 100%;
-    display: inline-flex;
-}
-
-/* for media-queries from 440px wide and down */
-@media screen and (max-width: 440px){
-.header{
-    font-size: 70%;
-    height: 145px;
-}
-};
+    /* for media-queries from 440px wide and down */
+    @media screen and (max-width: 440px) {
+        .header {
+            font-size: 70%;
+            height: 145px;
+        }
+    }

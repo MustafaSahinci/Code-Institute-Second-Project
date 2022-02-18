@@ -8,7 +8,6 @@
     <meta name="description" content="spongebob, a spongebob memory game">
     <meta name="keywords" content="spongebob, Memory game, flip game, card, cards,">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Spongebob Memory Game</title>
 </head>
@@ -22,16 +21,19 @@
     </header>
     <!-- flips and timer -->
     <section id="flipsCounter" class="counterflips">
-        <div class="flips">
+        <div class="moves">
             <h3>Flips</h3>
             <span id="counter-flips">0</span>
             <h3>timer</h3>
             <span id="timer">0</span>
         </div>
         <div class="playbutton">
-            <audio id="player" loop src="assets/audio/song.mp3" type="audio/mpeg"></audio>
-            <h1 onclick="document.getElementById('player').play()"><i class="fas fa-play"></i></h1>
-            <h1 onclick="document.getElementById('player').pause()"><i class="fas fa-pause"></i></h1>
+            <audio id="player" loop>
+                <source src="assets/audio/song.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a onclick="document.getElementById('player').play()"><i class="fas fa-play"></i></a>
+            <a onclick="document.getElementById('player').pause()"><i class="fas fa-pause"></i></a>
         </div>
     </section>
     <section class="media">
@@ -50,7 +52,7 @@
             <div id="myModal1" class="modalClass">
                 <div class="modal">
                     <span class="close">&times;</span>
-                    <h1> how to play</h1>
+                    <h2>how to play</h2>
                     <h3>
                         Flip the cards ! <br> <br>
                         Find the same charachters ! <br> <br>
@@ -231,12 +233,12 @@
         </div>
     </section>
     <!-- play and reset button, numbers flip and counter-->
-    <section id="control" class="controls">
+    <div id="control" class="controls">
         <div class="btn">
             <button onclick="resetGame()" class="button">Reset</button>
             <button onclick=quit() class="button">Quit</button>
         </div>
-    </section>
+    </div>
 
     <script src="assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/eda4aa541d.js" crossorigin="anonymous"></script>
