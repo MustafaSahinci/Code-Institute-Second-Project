@@ -243,10 +243,61 @@ a:hover {
     }
 }
 
-    /* for media-queries from 440px wide and down */
-    @media screen and (max-width: 440px) {
-        .header {
-            font-size: 70%;
-            height: 145px;
-        }
+/* for media-queries from 440px wide and down */
+@media screen and (max-width: 440px) {
+    .header {
+        font-size: 70%;
+        height: 145px;
     }
+}
+
+/* for media-queries from 450px height */
+@media screen and (max-height: 450px) {
+    .header {
+        font-size: 50%;
+        height: 55px;
+        margin: 0 auto;
+    }
+    .counterflips {
+        font-size: 50%;
+        height: 30px;
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .moves {
+        height: 40px;
+        width: 150px;
+    }
+
+    .playbutton {
+        height: 20px;
+        width: 45px;
+    }
+
+    .flip-game {
+        height: 300px;
+        width: 350px;
+    }
+
+    button {
+        font-size: 50%;
+        height: 30px;
+        padding: 10px;
+    }
+
+    .controls {
+        margin: 0 auto;
+        height: 30px;
+        width: 115px;
+        display: flex;
+    }
+
+    body {
+        height: 450px;
+    }
+
+    .menu {   
+        margin: 100px auto;
+         height: 70px;
+}
