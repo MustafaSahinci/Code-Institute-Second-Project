@@ -20,16 +20,53 @@ for the live site click
 # 3. Features
 ## Home page
 ![home page](docs/home-page.png)
-### Header
+## Header
 Featured at the top of the page, the Spongebob memory game logo and heading is easy to see for the user. Upon viewing the page, the user will be able to see the name of the game. The header is the same on all the pages.
 ![header](docs/header.png)
-### buttons
-when the user clicks on the buttons they can see a modal. If they press the how to play button they can read how to play. If they press the play button they can choose a level to go to the game. They can close the modal by pressing the cross or clicking anywhere outside the modal 
+## buttons and modals
+when the user clicks on the buttons they can see a modal. If they press the how to play button they can read how to play. If they press the play button they can choose a level to go to the game, The user can choose out of 3 levels easy,medium and hard. They can close the modal by pressing the cross or clicking anywhere outside the modal.
 ![how to play modal](docs/how-to-play.png)
 ![play modal](docs/play.png)
-### level
-The user can choose out of 3 levels easy,medium and hard.
+## The game and levels
+The user can play the game here, When the user clicks on the first card the countdown starts. The user must find all the matches to win the game. The countdown for easy mode is 60 seconds, for medium mode it is 90 seconds and for hard mode it is 120 seconds.
+![easy](docs/easy.png)
+![medium](docs/medium.png)
+![hard](docs/hard.png)
 
+## flip, timer and play, pause buttons
+The user can see here how many flips he made, how much time is left and can click on the play button to start the song or the pause button to pause it.
+![flip,timer and play pause buttons](docs/flips-timer-song.png)
+
+## reset and quit button
+The user can reset the game here and start over, and the user can click quit to go to the home page and choose another difficulty.
+![reset and quit button](docs/reset-quit.png)
+
+## modal after win and times up
+When the user wins the game a modal is gonna pop up with congratulations message, the user can see how many flips he made and how much time is left
+![win modal](docs/win-modal.png)
+if the user doesn't find all the matches in time, the user gets a modal message to try again
+![times up modal](docs/times-up.png)
+
+# 4. Future features
+- a high score section
+- a price every week for the best high score
+- Sound when the cards are clicked
+- style the modal different with a picture of Spongebob
+
+# 5. Typography and color scheme
+I used the Spongebob font which I found on https://www.fontspace.com/,
+And for the colors and theme I choose a Spongebob background with blue colors to represent the sea. The images for the characters are without background so it looks better in the cards.  
+
+# 6. wireframes
+## add later ----------------
+
+# 7. Technology
+
+# 8. testing 
+
+# 9. Deployment
+
+# 10. credits
 
 
 
