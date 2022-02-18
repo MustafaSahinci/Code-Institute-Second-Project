@@ -61,33 +61,54 @@ And for the colors and theme I choose a Spongebob background with blue colors to
 ## add later ----------------
 
 # 7. Technology
+These are the Technology I used for this project.
 
+HTML5 for markup
+CSS3 for style
+Javascript for the logic
+https://www.fontspace.com/
+TinyPng
+Font Awesome
+Git for version control, using the terminal to commit to Git and Push to GitHub
+Gitpod
+Github to store the projects code after being pushed from Git
+Chrome Developer tool to edit my css in real time
 # 8. testing 
+The game is tested on Google Chrome, Windows Edge, and firefox.
+The site is responsive on all devices, tested with Chrome Developer tool.
+
+
+## lighthouse desktop
+
+## lighthouse mobile
+
+## html and css validator
+
+## jshint 
 
 # 9. Deployment
+This website was deployed to GitHub pages :
+
+## gitpod
+1. In gitpod workspaces
+2. I choose the right workspace/repo
+3. Now i can write my code and readme
+4. To open my site I type : python3 -m http.server , in the terminal
+5. To save my code i Type in the terminal : git add .
+6. I type git commit -m "comment"
+7. I type git push to push it to github
+
+## github
+1. In the GitHub repo I click on settings tab
+2. then choose pages in the side bar 
+3. Once I chose the main Branch the page provided the link to the completed website.
 
 # 10. credits
+- My mentor Rohit Sharma
+- Code institute slack community
+- Stackoverflow
+- w3schools
+- The youtube tutorial from Marina Ferreira https://www.youtube.com/watch?v=ZniVgo8U7ek
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-pictures from google
-font from https://www.fontspace.com/
-modal from ws3
-stackoverflow
+# 11. media
+Images from google
