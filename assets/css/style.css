@@ -17,9 +17,9 @@ h3 {
 }
 
 body {
-    height: 815px;
+    height: 100vh;
     background: url(../images/spongebob1.png) no-repeat center center;
-    background-size: cover;
+    background-size: cover
 }
 
 img {
