@@ -52,6 +52,7 @@ if the user doesn't find all the matches in time, the user gets a modal message 
 - a price every week for the best high score
 - Sound when the cards are clicked
 - style the modal different with a picture of Spongebob
+- a modal for when the user clicks on reset or quit that says "are you sure" ?
 
 # 5. Typography and color scheme
 I used the Spongebob font which I found on https://www.fontspace.com/,
@@ -76,14 +77,13 @@ These are the Technology I used for this project.
 # 8. testing 
 The game is tested on Google Chrome, Windows Edge, and firefox.
 The site is responsive on all devices, tested with Chrome Developer tool.
-
-
 ## lighthouse desktop
-
+![lighthouse desktop](docs/lighthouse-destkop.png)
 ## lighthouse mobile
-
+![lighthouse mobile](docs/lighthouse-mobile.png)
 ## html and css validator
-
+![html validator](docs/html-validator.png)
+![css validator](docs/css-validator.png)
 ## jshint 
 
 # 9. Deployment
