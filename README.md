@@ -56,12 +56,9 @@ if the user doesn't find all the matches in time, the user gets a modal message 
 
 # 5. Typography and color scheme
 I used the Spongebob font which I found on https://www.fontspace.com/,
-And for the colors and theme I choose a Spongebob background with blue colors to represent the sea. The images for the characters are without background so it looks better in the cards.  
+And for the colors and theme I choose a Spongebob background with blue colors to represent the sea. The images for the characters are without background so it looks better in the cards. 
 
-# 6. wireframes
-## add later ----------------
-
-# 7. Technology
+# 6. Technology
 These are the Technology I used for this project.
 
 - HTML5 for markup
@@ -74,7 +71,7 @@ These are the Technology I used for this project.
 - Gitpod
 - Github to store the projects code after being pushed from Git
 - Chrome Developer tool to edit my css in real time
-# 8. testing 
+# 7. testing 
 The game is tested on Google Chrome, Windows Edge, and firefox.
 The site is responsive on all devices, tested with Chrome Developer tool.
 ## lighthouse desktop
@@ -86,7 +83,7 @@ The site is responsive on all devices, tested with Chrome Developer tool.
 ![css validator](docs/css-validator.png)
 ## jshint 
 
-# 9. Deployment
+# 8. Deployment
 This website was deployed to GitHub pages :
 
 ## gitpod
@@ -103,12 +100,12 @@ This website was deployed to GitHub pages :
 2. then choose pages in the side bar 
 3. Once I chose the main Branch the page provided the link to the completed website.
 
-# 10. credits
+# 9. credits
 - My mentor Rohit Sharma
 - Code institute slack community
 - Stackoverflow
 - w3schools
 - The youtube tutorial from Marina Ferreira https://www.youtube.com/watch?v=ZniVgo8U7ek
 
-# 11. media
+# 10. media
 Images from google
