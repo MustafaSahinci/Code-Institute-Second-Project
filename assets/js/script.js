@@ -178,7 +178,11 @@ function moves() {
 function checkForMatch() {
   let isMatch = firstCard.dataset.image === secondCard.dataset.image;
   matchCount = checkDivAndReturnMatchCount();
-  isMatch ? disableCards(matchCount) : unflipCards();
+  if (isMatch){
+    disableCards(matchCount);
+   } else {
+     unflipCards();
+   }
 }
 
 function checkDivAndReturnMatchCount() {
