@@ -52,6 +52,12 @@ img {
     transform-style: preserve-3d;
     -webkit-transform: -webkit-scale(1);
     -webkit-transform: -webkit-preserve-3d;
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: preserve-3d;
+    -moz-transform: preserve-3d;
+    -o-transform: preserve-3d;
     transition: transform .5s;
 }
 
@@ -64,6 +70,12 @@ img {
     transform-style: preserve-3d;
     -webkit-transform: -webkit-scale(1);
     -webkit-transform: -webkit-preserve-3d;
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: preserve-3d;
+    -moz-transform: preserve-3d;
+    -o-transform: preserve-3d;
     transition: transform .5s;
 }
 
@@ -76,6 +88,12 @@ img {
     transform-style: preserve-3d;
     -webkit-transform: -webkit-scale(1);
     -webkit-transform: -webkit-preserve-3d;
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: preserve-3d;
+    -moz-transform: preserve-3d;
+    -o-transform: preserve-3d;
     transition: transform .5s;
 }
 
@@ -84,6 +102,9 @@ img {
 .flip-card-hard:active {
     transform: scale(0.97);
     -webkit-transform: -webkit-scale(0.97);
+    -ms-transform: scale(0.97);
+    -moz-transform: scale(0.97);
+    -o-transform: scale(0.97);
     transition: transform.2s;
 }
 
