@@ -82,7 +82,7 @@ The site is responsive on all devices, tested with Chrome Developer tool.
 ![html validator](docs/html-validator.png)
 ![css validator](docs/css-validator.png)
 ## jshint 
-
+![jshint](docs/jshint.png)
 # 8. Deployment
 This website was deployed to GitHub pages :
 
