@@ -63,16 +63,16 @@ And for the colors and theme I choose a Spongebob background with blue colors to
 # 7. Technology
 These are the Technology I used for this project.
 
-HTML5 for markup
-CSS3 for style
-Javascript for the logic
-https://www.fontspace.com/
-TinyPng
-Font Awesome
-Git for version control, using the terminal to commit to Git and Push to GitHub
-Gitpod
-Github to store the projects code after being pushed from Git
-Chrome Developer tool to edit my css in real time
+- HTML5 for markup
+- CSS3 for style
+- Javascript for the logic
+- https://www.fontspace.com/
+- TinyPng
+- Font Awesome
+- Git for version control, using the terminal to commit - to Git and Push to GitHub
+- Gitpod
+- Github to store the projects code after being pushed from Git
+- Chrome Developer tool to edit my css in real time
 # 8. testing 
 The game is tested on Google Chrome, Windows Edge, and firefox.
 The site is responsive on all devices, tested with Chrome Developer tool.
