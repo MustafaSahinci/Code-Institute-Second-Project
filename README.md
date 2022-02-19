@@ -4,7 +4,7 @@ This site is made for kids who want to relax and play a Spongebob game. Because 
 
 Users of this website will be able to read how to play and then choose a difficulty. while the user is playing the user can see how many flips they made and how much time is over. The user can also click on play at the top of the game to listen to the Spongebob theme song or click pause if they don't want to listen. The users can reset the game if they want and start over, they also can quit the game and choose another difficulty. When the user found all the matches they gonna get a congratulations message where they can see how many moves they made and how much time is left.
 
-## here comes the i am responsive pictures
+![i am responsive](docs/responsive.png)
 for the live site click
 [here](https://mustafasahinci.github.io/Code-Institute-Second-Project/)
 
