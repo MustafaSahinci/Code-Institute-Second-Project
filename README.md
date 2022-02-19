@@ -39,6 +39,7 @@ The user can see here how many flips he made, how much time is left and can clic
 
 ## reset and quit button
 The user can reset the game here and start over, and the user can click quit to go to the home page and choose another difficulty.
+<br>
 ![reset and quit button](docs/reset-quit.png)
 
 ## modal after win and times up
