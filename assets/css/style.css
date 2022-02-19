@@ -17,7 +17,7 @@ h3 {
 }
 
 body {
-    height: 105vh;
+    height: 100vh;
     background: url(../images/spongebob1.png) no-repeat center center;
 }
 
@@ -300,5 +300,13 @@ a:hover {
     .menu {
         margin: 100px auto;
         height: 70px;
+    }
+}
+
+/* for media-queries from 450px height */
+@media screen and (min-height: 1000px){
+    body{
+        height: 1400px;
+        background-size: cover;
     }
 }
