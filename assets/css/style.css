@@ -257,6 +257,7 @@ a:hover {
         height: 55px;
         margin: 0 auto;
     }
+
     .counterflips {
         font-size: 50%;
         height: 30px;
@@ -296,7 +297,8 @@ a:hover {
         height: 450px;
     }
 
-    .menu {   
+    .menu {
         margin: 100px auto;
-         height: 70px;
+        height: 70px;
+    }
 }
