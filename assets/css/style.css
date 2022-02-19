@@ -50,6 +50,8 @@ img {
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
+    -webkit-transform: -webkit-scale(1);
+    -webkit-transform: -webkit-preserve-3d;
     transition: transform .5s;
 }
 
@@ -60,6 +62,8 @@ img {
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
+    -webkit-transform: -webkit-scale(1);
+    -webkit-transform: -webkit-preserve-3d;
     transition: transform .5s;
 }
 
@@ -70,6 +74,8 @@ img {
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
+    -webkit-transform: -webkit-scale(1);
+    -webkit-transform: -webkit-preserve-3d;
     transition: transform .5s;
 }
 
@@ -77,6 +83,7 @@ img {
 .flip-card-medium:active,
 .flip-card-hard:active {
     transform: scale(0.97);
+    -webkit-transform: -webkit-scale(0.97);
     transition: transform.2s;
 }
 
