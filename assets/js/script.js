@@ -68,7 +68,7 @@ function gameModeEasy() {
   controls.style.display = "";
   flipTimeLeft.style.display = "";
   homePage.style.display = "none";
-  gameStart.innerText = 30;
+  gameStart.innerText = 60;
 }
 
 function gameModeMedium() {
@@ -77,7 +77,7 @@ function gameModeMedium() {
   controls.style.display = "";
   flipTimeLeft.style.display = "";
   homePage.style.display = "none";
-  gameStart.innerText = 60;
+  gameStart.innerText = 90;
 }
 
 function gameModeHard() {
@@ -86,7 +86,7 @@ function gameModeHard() {
   controls.style.display = "";
   flipTimeLeft.style.display = "";
   homePage.style.display = "none";
-  gameStart.innerText = 90;
+  gameStart.innerText = 120;
 }
 
 // modals
@@ -178,11 +178,11 @@ function moves() {
 function checkForMatch() {
   let isMatch = firstCard.dataset.image === secondCard.dataset.image;
   matchCount = checkDivAndReturnMatchCount();
-  if (isMatch){
+  if (isMatch) {
     disableCards(matchCount);
-   } else {
-     unflipCards();
-   }
+  } else {
+    unflipCards();
+  }
 }
 
 function checkDivAndReturnMatchCount() {
@@ -226,11 +226,11 @@ function resetBoard() {
 // countdown timer
 function startTimer() {
   if (difficulty === "easy") {
-    countdown = 30;
-  } else if (difficulty === "medium") {
     countdown = 60;
-  } else if (difficulty === "hard") {
+  } else if (difficulty === "medium") {
     countdown = 90;
+  } else if (difficulty === "hard") {
+    countdown = 120;
   }
   timer = setInterval(function () {
     countdown--;
@@ -249,11 +249,11 @@ function resetGame() {
     clearInterval(timer);
     timeOn = false;
     if (difficulty === "easy") {
-      gameStart.innerText = 30;
-    } else if (difficulty === "medium") {
       gameStart.innerText = 60;
-    } else if (difficulty === "hard") {
+    } else if (difficulty === "medium") {
       gameStart.innerText = 90;
+    } else if (difficulty === "hard") {
+      gameStart.innerText = 120;
     }
     cardCorrect = 0;
     shuffle();

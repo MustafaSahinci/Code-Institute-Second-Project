@@ -84,6 +84,9 @@ The site is responsive on all devices, tested with Chrome Developer tool.
 ![css validator](docs/css-validator.png)
 ## jshint 
 ![jshint](docs/jshint.png)
+## bugs
+There is one know bug in the game, it didn't work on iphone's safari. As the SO solution link mentioned and the tutor on Code Institute : adding the vendor prefixed style should take care of the issue on safari. I added all vendor prefixed style's, But it is still not working. Unfortunately I couldn't test and verify the solution because I am not an apple user.
+The issue is mainly caused by browser discrepancy and compatibility with the CSS transform.
 # 8. Deployment
 This website was deployed to GitHub pages :
 
